@@ -1,4 +1,3 @@
-
 ####### Question 1 #######
 # Read the opening and closing prices data from `dbs_data_1.csv` 
 # and `dbs_data_2.csv` in the current folder. 
@@ -15,7 +14,7 @@ from pathlib import Path
 import csv
 
 # create a path object to current working directory
-# as both csv files are located there.
+# as the csv files are located in the same folder as file_io.py.
 fp_read = Path.cwd()
 
 # create 2 global variables to store opening and closing prices.
@@ -28,7 +27,7 @@ for file in fp_read.glob("*.csv"):
     # in each loop:
     ## 1. open each csv file in read mode
     with file.open(mode="r", encoding="UTF") as dbs_shares:
-        ## 2. create a reader object using reader() method in csv module
+        ## 2. create a reader object using reader() method from csv module
         reader = csv.reader(dbs_shares)
         ## 3. use next() function to skip header in first row
         next(reader)
@@ -40,14 +39,15 @@ for file in fp_read.glob("*.csv"):
             close.append(float(row[2]))
 
 # compute average opening and closing price
-# round to 1 decimal place 
-# create 2 global variables and assign them with the computed price.
+# round the values to 1 decimal place 
+# create 2 global variables for the computed prices.
 avg_open = round(sum(open)/len(open),1)
 avg_close =  round(sum(close)/len(close),1)
+
 # create a global variable to store the statement
 statement = "Average opening and closing price of DBS shares: "
 
-# print using f-strings with the variables.
+# print using f-string with the variables.
 print(f"{statement} ${avg_open}, ${avg_close}")
 
 
@@ -58,9 +58,11 @@ print(f"{statement} ${avg_open}, ${avg_close}")
 
 
 ####### Solution for Question 2 #######
-# creata a path object with file name: "dbs_avg_price.txt"
+# create a path object with file name: "dbs_avg_price.txt"
+# in the current working directory.
 fp_write = Path.cwd()/"dbs_avg_price.txt"
-# create the file using touch() method
+# create the file "dbs_avg_price.txt" in 
+# current working directory using touch() method
 fp_write.touch()
 
 # open text file in write mode
