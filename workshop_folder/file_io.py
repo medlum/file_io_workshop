@@ -1,11 +1,13 @@
 
 ####### Question 1 #######
-# Write a program in the current working directory to extract
-# the opening and closing prices data of `dbs_data_1.csv` and `dbs_data_2.csv`.
-# After extracting the opening and closing price, the program will compute
-# the average opening price and average closing price.
-# When the program is executed, it will print the following:
-# "Average opening and closing price of DBS shares:  $12.5, $12.3"
+# Read the opening and closing prices data from `dbs_data_1.csv` 
+# and `dbs_data_2.csv` in the current folder. 
+# Compute the average opening price and average closing price after
+# reading the data. 
+# When the program is executed, it will print the following statement:
+# "Average opening and closing price of DBS shares:  $xx.x, $xx.x"
+
+####### Solution for Question 1 #######
 
 # import Path function from pathlib module
 from pathlib import Path
@@ -49,3 +51,19 @@ statement = "Average opening and closing price of DBS shares: "
 print(f"{statement} ${avg_open}, ${avg_close}")
 
 
+####### Question 2 #######
+# Write the average opening and closing prices of DBS shares 
+# from Question 1 to a text file.
+# Name the text file as "dbs_avg_price.txt"
+
+
+####### Solution for Question 2 #######
+# creata a path object with file name: "dbs_avg_price.txt"
+fp_write = Path.cwd()/"dbs_avg_price.txt"
+# create the file using touch() method
+fp_write.touch()
+
+# open text file in write mode
+with fp_write.open(mode = "w", encoding="UTF-8") as text_file:
+    # write prices to text file
+    text_file.write(f"{statement} ${avg_open}, ${avg_close}")
