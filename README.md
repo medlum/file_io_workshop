@@ -9,5 +9,5 @@
 ## Screenshot 1: Download zip folder from GitHub
 ![image](https://user-images.githubusercontent.com/52624830/175456794-e745f94f-997b-49af-928a-f2a82a0cb742.png)
 
-## Screenshot 2
+## Screenshot 2: Open folder in VS Code after extraction
 ![image](https://user-images.githubusercontent.com/52624830/175019921-a098ed8c-9133-426d-be3b-d67ebf8482e4.png)
